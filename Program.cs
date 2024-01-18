@@ -13,16 +13,20 @@ namespace bai_tap_cau_truc_vong_lap
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
-            Console.WriteLine("1. Bài 1. Chương trình nhập số nguyên và kiểm tra xem số đó có chia hết cho 3 hay không\n\n" +
-               "2. Bài 2. Chương trình Nhập vào số nguyên dương n, hiển thị bảng cửu chương từ 2 đến n ra màn hình\n\n"+
-               "3. Bài 3.Chương trình Nhập vào số nguyên dương n, Tính tổng giai thừa từ 1 đến n và in ra màn hình\n\n"+
-               "4. Bài 4. Chương trình Nhập vào số nguyên dương n, Kiểm tra xem n có phải là số chính phương và in ra màn hình\n\n"+
-               "5. Bài 5. Chương trình cho biết số ngày trong tháng\n\n"+
-               "6. Bài 6. Chương trình nhập vào số nguyên dương n, tính tổng S theo công thức sau 1+2^2+3^3+...n^n và hiển thị kquả ra màn hình\n\n"+
-               "7. Bài 7. Chương trình nhập vào số nguyên dương n, tính tổng số lẻ từ 1 đến n và hiển thị kết quả ra màn hình\n\n"+
-               "8. Bài 8. Nhập vào số nguyên dương n, Kiểm tra đó có phải là số nguyên tố hay không?\n\n"+
-               "9. Bài 9. Chương trình nhập vào số hàng n, vẽ tam giác * với số hàng tương ứng\n\n"+
+            while (true)
+            {
+                Console.Clear();
+                Console.Write("1. Bài 1. Chương trình nhập số nguyên và kiểm tra xem số đó có chia hết cho 3 hay không\n\n" +
+               "2. Bài 2. Chương trình Nhập vào số nguyên dương n, hiển thị bảng cửu chương từ 2 đến n ra màn hình\n\n" +
+               "3. Bài 3.Chương trình Nhập vào số nguyên dương n, Tính tổng giai thừa từ 1 đến n và in ra màn hình\n\n" +
+               "4. Bài 4. Chương trình Nhập vào số nguyên dương n, Kiểm tra xem n có phải là số chính phương và in ra màn hình\n\n" +
+               "5. Bài 5. Chương trình cho biết số ngày trong tháng\n\n" +
+               "6. Bài 6. Chương trình nhập vào số nguyên dương n, tính tổng S theo công thức sau 1+2^2+3^3+...n^n và hiển thị kquả ra màn hình\n\n" +
+               "7. Bài 7. Chương trình nhập vào số nguyên dương n, tính tổng số lẻ từ 1 đến n và hiển thị kết quả ra màn hình\n\n" +
+               "8. Bài 8. Nhập vào số nguyên dương n, Kiểm tra đó có phải là số nguyên tố hay không?\n\n" +
+               "9. Bài 9. Chương trình nhập vào số hàng n, vẽ tam giác * với số hàng tương ứng\n\n" +
                "10. Bài 10. Chương trình Nhập vào số nguyên dương n, tính toán và hiển thị dãy Fibonacci ra màn hình\n");
+            
             Console.Write("\nMời bạn gõ số thứ tự bài tập: ");
             int stt = int.Parse(Console.ReadLine());
             switch (stt)
@@ -34,13 +38,13 @@ namespace bai_tap_cau_truc_vong_lap
                     bai_2();
                     break;
                 case 3:
-                    bai_3();             
+                    bai_3();
                     break;
                 case 4:
-                    bai_4();                    
+                    bai_4();
                     break;
                 case 5:
-                    bai_5();                    
+                    bai_5();
                     break;
                 case 6:
                     bai_6();
@@ -55,12 +59,29 @@ namespace bai_tap_cau_truc_vong_lap
                     bai_9();
                     break;
                 case 10:
-                    bai_10(); 
+                    bai_10();
                     break;
             }
+                bool stop = ThoatChuongTrinh();
+                if (stop)
+                break;
+
 
             Console.ReadKey();
+        }
 
+        }
+        //Dừng hay đi tiếp
+        public static bool ThoatChuongTrinh()
+        {    
+            Console.WriteLine("Nhấn 2 lần phím bất kỳ để tiếp tục :)");
+            Console.WriteLine("Nhấn ESC. để thoát chương trình");
+            ConsoleKeyInfo str = Console.ReadKey();
+            if (str.Key == ConsoleKey.Escape)
+               
+            return true;
+            
+                return false;
         }
         //BÀI 1
         public static void bai_1()
